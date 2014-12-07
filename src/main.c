@@ -65,6 +65,9 @@ static void init() {
   // Show the Window on the watch, with animated=true.
   window_stack_push(s_main_window, true);
   
+  // Register with the TickTimerService
+  tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+  
   // Make sure the time is displayed from the start
   update_time();
   
